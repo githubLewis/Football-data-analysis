@@ -7,12 +7,12 @@ Collection of scripts used to generate analysis of football statistics.
 ### poisson.py
 Generates a poisson graph jpg for each team in the file
 
-[![Southampton Poisson](blob/master/outputs/examples/Southampton.jpg?raw=true)][Southampton Poisson]
+[![Southampton Poisson](/outputs/examples/Southampton.jpg?raw=true)][Southampton Poisson]
 
 ### tabela.py
 Generates a league table and a rolling average graph (shots on goal, shots on target, corners) for a named (via input) team.
 
-[![Southampton Averages](blob/master/outputs/examples/southampton_avg.jpg?raw=true)][Southampton Averages]
+[![Southampton Averages](/outputs/examples/southampton_avg.jpg?raw=true)][Southampton Averages]
 
 ### Teams.py
 Shared code, contains the team class and CSV helper.

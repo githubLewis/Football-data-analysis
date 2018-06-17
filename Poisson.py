@@ -5,7 +5,7 @@ import numpy as np
 from scipy.misc import factorial
 from scipy.optimize import curve_fit
 
-data = Teams.csvopen('E0.csv')
+data = Teams.csvopen('inputs/E0.csv')
 next(data)
 #input_team = raw_input("Team: ")
 
@@ -14,7 +14,7 @@ teams = {}
 def poisson(k, lam):
     return ((lam**k)/factorial(k))* np.exp(-lam)
 
-output = open('Parameters.txt','w')
+output = open('outputs/Parameters.txt','w')
 
 for row in data:
     home_team = row[2]
@@ -39,8 +39,8 @@ for team in teams.keys():
     goal_list = teams.get(input_team).goals
     goal_list.sort()
     counted = collections.Counter(goal_list)
-    no_of_occurencies = counted.values()
-    no_of_goals = counted.keys()
+    no_of_occurencies = list(counted.values())
+    no_of_goals = list(counted.keys())
     for item in no_of_goals:
         goal_no.append(no_of_goals[i])
         probability = float(no_of_occurencies[i])/len(goal_list)
@@ -64,6 +64,6 @@ for team in teams.keys():
     plt.ylabel('Probability')
     plt.xlim(-1, (max(no_of_goals)+1))
     plt.legend()
-    plt.savefig(input_team + '.jpg')
+    plt.savefig('outputs/' + input_team + '.jpg')
     plt.clf()
 output.close()

@@ -1,6 +1,6 @@
 import csv
 def csvopen(filename):
-    csv_file = open(filename, 'rb')
+    csv_file = open(filename)
     data = csv.reader(csv_file, delimiter=',')
     return data
 

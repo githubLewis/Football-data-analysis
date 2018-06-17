@@ -18,7 +18,7 @@ Generates a rolling average graph (shots on goal, shots on target, corners) for 
 ![Southampton Averages](/outputs/examples/Southampton_avg.jpg?raw=true)
 
 ### Teams.py
-Shared code, contains the team class and CSV helper.
+Shared code, contains the team class and helper functions, such as poisson & csvopen.
 
 ## Usage
 Scripts can be run in the Python terminal.

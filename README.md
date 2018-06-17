@@ -9,7 +9,7 @@ Generates a poisson graph jpg for each team in the file.
 
 ![Southampton Poisson](/outputs/examples/Southampton.jpg?raw=true)
 
-### tabela.py
+### standings.py
 Generates a league table.
 
 ### averages.py
@@ -18,7 +18,7 @@ Generates a rolling average graph (shots on goal, shots on target, corners) for 
 ![Southampton Averages](/outputs/examples/Southampton_avg.jpg?raw=true)
 
 ### Teams.py
-Shared code, contains the team class and CSV helper.
+Shared code, contains the team class and helper functions, such as poisson & csvopen.
 
 ## Usage
 Scripts can be run in the Python terminal.

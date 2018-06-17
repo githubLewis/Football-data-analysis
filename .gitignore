@@ -104,3 +104,4 @@ $RECYCLE.BIN/
 .vscode/launch.json
 outputs/*.*
 *.txt
+outputs/Parameters.txt

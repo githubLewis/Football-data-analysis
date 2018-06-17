@@ -14,10 +14,6 @@ data = Teams.csvopen('inputs/E0.csv')
 next(data)
 #input_team = raw_input("Team: ")
 
-def mov_avg(data,window_size):
-    window = np.ones(int(window_size))/float(window_size)
-    return np.convolve(data, window, 'valid')
-
 teams = {}
 points = 0
 played = 0
@@ -52,9 +48,9 @@ for team in teams.keys():
     avg_shots = teams.get(input_team, None).shots
     avg_sht = teams.get(input_team, None).shots_on_target
     avg_corners = teams.get(input_team, None).corners
-    shots_mov_avg = mov_avg(avg_shots, avg_window)
-    sht_mov_avg = mov_avg(avg_sht, avg_window)
-    corners_mov_avg = mov_avg(avg_corners, avg_window)
+    shots_mov_avg = Teams.mov_avg(avg_shots, avg_window)
+    sht_mov_avg = Teams.mov_avg(avg_sht, avg_window)
+    corners_mov_avg = Teams.mov_avg(avg_corners, avg_window)
     plt.plot(shots_mov_avg, label = "Shots on goal")
     plt.plot(sht_mov_avg, label = "Shots on target")
     plt.plot(corners_mov_avg, label = "Corners")

@@ -9,7 +9,7 @@ Generates a poisson graph jpg for each team in the file.
 
 ![Southampton Poisson](/outputs/examples/Southampton.jpg?raw=true)
 
-### tabela.py
+### standings.py
 Generates a league table.
 
 ### averages.py

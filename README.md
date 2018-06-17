@@ -5,12 +5,15 @@ Using Python tools to analyze football statistics
 Collection of scripts used to generate analysis of football statistics.
 
 ### poisson.py
-Generates a poisson graph jpg for each team in the file
+Generates a poisson graph jpg for each team in the file.
 
 ![Southampton Poisson](/outputs/examples/Southampton.jpg?raw=true)
 
 ### tabela.py
-Generates a league table and a rolling average graph (shots on goal, shots on target, corners) for a named (via input) team.
+Generates a league table.
+
+### averages.py
+Generates a rolling average graph (shots on goal, shots on target, corners) for each team in the file.
 
 ![Southampton Averages](/outputs/examples/Southampton_avg.jpg?raw=true)
 

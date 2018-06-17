@@ -102,6 +102,4 @@ $RECYCLE.BIN/
 .vscode/launch.json
 .vscode/settings.json
 .vscode/launch.json
-outputs/Standings.txt
-outputs/tabela.jpg
-outputs/Standings.txt
+outputs/*.*

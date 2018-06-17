@@ -7,7 +7,7 @@ from collections import OrderedDict
 
 input_date = input("Date (dd/mm/yy format): ")
 #input_team = input("Team: ")
-#avg_window = input("Window size for rolling average: ")
+avg_window = input("Window size for rolling average: ")
 stop_date = dt.datetime.strptime(input_date, '%d/%m/%y')
 
 data = Teams.csvopen('inputs/E0.csv')
@@ -47,10 +47,21 @@ for row in data:
     teams[home_team].update(home_goals, away_goals, home_shots, home_sht, home_corners)
     teams[away_team].update(away_goals, home_goals, away_shots, away_sht, away_corners)
 
-sorted_teams = sorted(teams.values(), reverse=True, key=lambda t: t.points)
-
-output = open('outputs/Standings.txt','w')
-output.write('Date Table: ' + input_date + '\n')
-for team in sorted_teams:
-    output.write(str(team) + '\n')
-output.close()
+for team in teams.keys():
+    input_team = team
+    avg_shots = teams.get(input_team, None).shots
+    avg_sht = teams.get(input_team, None).shots_on_target
+    avg_corners = teams.get(input_team, None).corners
+    shots_mov_avg = mov_avg(avg_shots, avg_window)
+    sht_mov_avg = mov_avg(avg_sht, avg_window)
+    corners_mov_avg = mov_avg(avg_corners, avg_window)
+    plt.plot(shots_mov_avg, label = "Shots on goal")
+    plt.plot(sht_mov_avg, label = "Shots on target")
+    plt.plot(corners_mov_avg, label = "Corners")
+    plt.axis([0, 35, 0, 25])
+    plt.title("Rolling average")
+    plt.xlabel("Number of matches")
+    plt.ylabel("Average value")
+    plt.legend()
+    plt.savefig('outputs/' + team + '_avg.jpg')
+    plt.clf()

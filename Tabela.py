@@ -69,5 +69,6 @@ plt.title("Rolling average")
 plt.xlabel("Number of matches")
 plt.ylabel("Average value")
 plt.legend()
-plt.show()
+plt.savefig('outputs/tabela.jpg')
+plt.clf()
                                                              

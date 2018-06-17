@@ -1,22 +1,14 @@
 import Teams
 import csv
 import datetime as dt
-import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 
 input_date = input("Date (dd/mm/yy format): ")
-#input_team = input("Team: ")
-#avg_window = input("Window size for rolling average: ")
 stop_date = dt.datetime.strptime(input_date, '%d/%m/%y')
 
 data = Teams.csvopen('inputs/E0.csv')
 next(data)
-#input_team = raw_input("Team: ")
-
-def mov_avg(data,window_size):
-    window = np.ones(int(window_size))/float(window_size)
-    return np.convolve(data, window, 'valid')
 
 teams = {}
 points = 0

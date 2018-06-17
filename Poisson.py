@@ -1,18 +1,13 @@
 import Teams
 import collections
-import matplotlib.pyplot as plt
 import numpy as np
-from scipy.misc import factorial
+import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 data = Teams.csvopen('inputs/E0.csv')
 next(data)
-#input_team = raw_input("Team: ")
 
 teams = {}
-
-def poisson(k, lam):
-    return ((lam**k)/factorial(k))* np.exp(-lam)
 
 output = open('outputs/Parameters.txt','w')
 
@@ -50,14 +45,14 @@ for team in teams.keys():
         i += 1
 
 
-    parameters, cov = curve_fit(poisson, no_of_goals, no_of_occurencies)
+    parameters, cov = curve_fit(Teams.poisson, no_of_goals, no_of_occurencies)
     x_data = np.linspace(0, 8, 1000)
 
     #if parameters[0] < 0:
         #parameters[0] = 1
     output.write(input_team + str(parameters) + '\n')
     plt.plot(goal_no, prob, '*', label = 'Data points')
-    plt.plot(x_data, poisson(x_data, *parameters), 'r-', lw=3, label = 'Poisson fit')
+    plt.plot(x_data, Teams.poisson(x_data, *parameters), 'r-', lw=3, label = 'Poisson fit')
     plt.errorbar(goal_no, prob, yerr = prob_err, fmt='', linestyle = 'none')
     plt.title('Probability distribution of number of goals in a match for ' + input_team)
     plt.xlabel('Number of goals')

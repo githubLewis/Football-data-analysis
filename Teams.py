@@ -1,8 +1,21 @@
 import csv
+import Teams
+import collections
+import numpy as np
+from scipy.misc import factorial
+
+
 def csvopen(filename):
     csv_file = open(filename)
     data = csv.reader(csv_file, delimiter=',')
     return data
+
+def mov_avg(data,window_size):
+    window = np.ones(int(window_size))/float(window_size)
+    return np.convolve(data, window, 'valid')
+
+def poisson(k, lam):
+    return ((lam**k)/factorial(k))* np.exp(-lam)
 
 class Team:
     def __init__(self, name):

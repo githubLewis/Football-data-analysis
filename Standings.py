@@ -13,9 +13,9 @@ next(data)
 teams = {}
 points = 0
 played = 0
-sg = 0 #dati golovi
-ag = 0 #primljeni golovi
-goal_diff = 0 #gol razlika
+sg = 0
+ag = 0
+goal_diff = 0
 
 for row in data:
     date=dt.datetime.strptime(row[1], '%d/%m/%y')

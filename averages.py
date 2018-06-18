@@ -12,14 +12,13 @@ stop_date = dt.datetime.strptime(input_date, '%d/%m/%y')
 
 data = Teams.csvopen('inputs/E0.csv')
 next(data)
-#input_team = raw_input("Team: ")
 
 teams = {}
 points = 0
 played = 0
-sg = 0 #dati golovi
-ag = 0 #primljeni golovi
-goal_diff = 0 #gol razlika
+sg = 0
+ag = 0
+goal_diff = 0
 
 for row in data:
     date=dt.datetime.strptime(row[1], '%d/%m/%y')

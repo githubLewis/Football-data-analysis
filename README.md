@@ -17,8 +17,16 @@ Generates a rolling average graph (shots on goal, shots on target, corners) for 
 
 ![Southampton Averages](/outputs/examples/Southampton_avg.jpg?raw=true)
 
+### LastXResultsAsGraph.py
+Generates a bar graph displaying the last 10 results in a graphical fashion.
+
+![Southampton Last10](/outputs/examples/Southampton_last10_bar.jpg?raw=true)
+
+### LastXResultsAsText.py
+Generates a text file displaying the last 10 results in text format.
+
 ### Teams.py
-Shared code, contains the team class and helper functions, such as poisson & csvopen.
+Shared code, contains the team, fixture classes and helper functions, such as poisson & csvopen.
 
 ## Usage
 Scripts can be run in the Python terminal.

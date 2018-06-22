@@ -61,4 +61,5 @@ for team in teams.keys():
     plt.legend()
     plt.savefig('outputs/' + input_team + '.jpg')
     plt.clf()
+    
 output.close()

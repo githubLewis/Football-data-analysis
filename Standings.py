@@ -43,6 +43,8 @@ sorted_teams = sorted(teams.values(), reverse=True, key=lambda t: t.points)
 
 output = open('outputs/Standings.txt','w')
 output.write('Date Table: ' + input_date + '\n')
+
 for team in sorted_teams:
     output.write(str(team) + '\n')
+
 output.close()

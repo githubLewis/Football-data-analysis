@@ -45,3 +45,13 @@ class Team:
         self.corners.append(cor)
     def scored(self, scored):
         self.goals.append(scored)
+
+class Fixture:
+    def __init__(self, name, fixture_date, winner):
+        self.name = name
+        self.hometeam = Team
+        self.awayteam = Team
+        self.fixture_date = fixture_date
+        self.winner = winner
+    def __repr__(self):
+        return str((self.name, self.hometeam, self.awayteam, self.fixture_date, self.winner))

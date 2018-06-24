@@ -3,13 +3,15 @@ import collections
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+from constants import _Const
 
-data = Teams.csvopen('inputs/E0.csv')
+CONST = _Const()
+data = Teams.csvopen(CONST.INPUT_FILE)
 next(data)
 
 teams = {}
 
-output = open('outputs/Parameters.txt','w')
+output = open(CONST.OUTPUT_PATH + 'Parameters.txt','w')
 
 for row in data:
     home_team = row[2]
@@ -59,7 +61,7 @@ for team in teams.keys():
     plt.ylabel('Probability')
     plt.xlim(-1, (max(no_of_goals)+1))
     plt.legend()
-    plt.savefig('outputs/' + input_team + '.jpg')
+    plt.savefig(CONST.OUTPUT_PATH + input_team + '.jpg')
     plt.clf()
     
 output.close()

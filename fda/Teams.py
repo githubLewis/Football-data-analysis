@@ -4,7 +4,6 @@ import collections
 import numpy as np
 from scipy.misc import factorial
 
-
 def csvopen(filename):
     csv_file = open(filename)
     data = csv.reader(csv_file, delimiter=',')

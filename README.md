@@ -7,7 +7,7 @@ Collection of scripts used to generate analysis of football statistics.
 ### poisson.py
 Generates a poisson graph jpg for each team in the file.
 
-![Southampton Poisson](/outputs/examples/Southampton.jpg?raw=true)
+![Southampton Poisson](/outputs/examples/Southampton_psn.jpg?raw=true)
 
 ### standings.py
 Generates a league table.
@@ -27,6 +27,12 @@ Generates a text file displaying the last 10 results in text format.
 
 ### Teams.py
 Shared code, contains the team, fixture classes and helper functions, such as poisson & csvopen.
+
+### dataLoader.py
+Used to load the data from the CSV.
+
+### constants.py
+Holds constant values used across scripts (paths etc)
 
 ## Usage
 Scripts can be run in the Python terminal.

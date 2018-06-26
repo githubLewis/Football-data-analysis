@@ -1,29 +1,33 @@
 import Teams
 import collections
+import datetime as dt
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from constants import _Const
+import dataLoader
 
 CONST = _Const()
-data = Teams.csvopen(CONST.INPUT_FILE)
-next(data)
-
 teams = {}
 
+fixtures = dataLoader.LoadAllData(dt.datetime.now())
 output = open(CONST.OUTPUT_PATH + 'Parameters.txt','w')
 
-for row in data:
-    home_team = row[2]
-    away_team = row[3]
-    home_goals = int(row[4])
-    away_goals = int(row[5])
+for fixture in fixtures:
+    
+    fix = fixtures.get(fixture)
+    
+    home_team = fix.hometeam.name
+    away_team = fix.awayteam.name
+    home_goals = fix.hometeam.goals_scored
+    away_goals = fix.awayteam.goals_scored
+
     if home_team not in teams:
         teams[home_team] = Teams.Team(name = home_team)
     if away_team not in teams:
         teams[away_team] = Teams.Team(name = away_team)
     teams[home_team].scored(home_goals)
-    teams[home_team].scored(home_goals)
+    teams[away_team].scored(away_goals)
 
 for team in teams.keys():
     input_team = team
@@ -61,7 +65,7 @@ for team in teams.keys():
     plt.ylabel('Probability')
     plt.xlim(-1, (max(no_of_goals)+1))
     plt.legend()
-    plt.savefig(CONST.OUTPUT_PATH + input_team + '.jpg')
+    plt.savefig(CONST.OUTPUT_PATH + input_team + '_psn.jpg')
     plt.clf()
     
 output.close()

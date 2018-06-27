@@ -12,6 +12,9 @@ Generates a poisson graph jpg for each team in the file.
 ### standings.py
 Generates a league table.
 
+### standingshtml.py
+Generates a league table in a html fragment.
+
 ### averages.py
 Generates a rolling average graph (shots on goal, shots on target, corners) for each team in the file.
 
